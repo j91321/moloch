@@ -28,11 +28,11 @@ function help () {
   console.log('addUser.js [<config options>] <user id> <user friendly name> <password> [<options>]');
   console.log('');
   console.log('Options:');
-  console.log('  --admin               Has admin privileges');
+  //console.log('  --admin               Has admin privileges');
   console.log('  --apionly             Can only use api, not web pages');
   console.log('  --email               Can do email searches');
   console.log('  --expression  <expr>  Forced user expression');
-  console.log('  --remove              Can remove data (scrub, delete tags)');
+  //console.log('  --remove              Can remove data (scrub, delete tags)');
   console.log('  --webauth             Can auth using the web auth header or password');
   console.log('  --webauthonly         Can auth using the web auth header only, password ignored');
   console.log('  --packetSearch        Can create a packet search job (hunt)');
@@ -61,7 +61,8 @@ function main () {
     emailSearch: false,
     createEnabled: false,
     removeEnabled: false,
-    packetSearch: false,
+    packetSearch: true,
+    disablePcapDownload: false,
     welcomeMsgNum: 0,
     settings: {}
   };
@@ -69,15 +70,15 @@ function main () {
   var i;
   for (i = 5; i < process.argv.length; i++) {
     switch (process.argv[i]) {
-      case '--admin':
-      case '-admin':
-        nuser.createEnabled = true;
-        break;
+      //case '--admin':
+      //case '-admin':
+      //  nuser.createEnabled = true;
+      //  break;
 
-      case '--remove':
-      case '-remove':
-        nuser.removeEnabled = true;
-        break;
+      //case '--remove':
+      //case '-remove':
+      //  nuser.removeEnabled = true;
+      //  break;
 
       case '--noweb':
       case '-noweb':
